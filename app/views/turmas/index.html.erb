@@ -1,0 +1,36 @@
+<h3>Turmas</h3>
+
+<div class="row col-md-12">
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to("Nova Turma", new_turma_path, class: "btn btn-success btn-xs pull-right", title: "nova Turma") %>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Periodo</th>
+
+        <th class="text-center">Administrar</th>
+      </tr>
+    </thead>
+    <% @turmas.each do |turma| %>
+      <tr>
+        <td><%= turma.id %></td>
+        <td><%= turma.name %></td>
+        <td><%= turma.period %></td>
+
+        <td class="text-center">
+         <%= link_to(turma_path(turma), class:"btn btn-default btn-xs") do %>
+           <span class="glyphicon glyphicon-remove"></span> Show
+          <% end %>
+          <%= link_to(edit_turma_path(turma), class: 'btn btn-info btn-xs') do %>
+           <span class="glyphicon glyphicon-edit"></span> Editar
+          <% end %>
+          <%= link_to(turma_path(turma), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
+            <span class="glyphicon glyphicon-remove"></span> Deletar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+   
+  </table>
+</div>

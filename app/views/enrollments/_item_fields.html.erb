@@ -1,0 +1,21 @@
+
+<div class="nested-fields">
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="textinput">Disciplina</label>
+        <div class="col-sm-8">
+            <%= f.select :discipline_id, Discipline.all.collect {|p| [p.name, p.id]}, { prompt: "Selecione a Diciplina"} , class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="textinput">Turma</label>
+        <div class="col-sm-8">
+            <%= f.select :turma_id, Turma.all.collect {|p| [p.name, p.id]}, { prompt: "Selecione a Turma"} , class: "form-control" %>
+        </div>
+        <div class="col-sm-2">
+            <%= link_to_remove_association "Remover", f, class: "btn btn-danger" %>
+        </div>
+    </div>
+</div>
+
+

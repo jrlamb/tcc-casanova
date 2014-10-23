@@ -1,0 +1,23 @@
+  <div class="row">
+  	<div class="col-md-12">
+      <%= form_for(@teacher, html: {class: "form-horizontal", role: "form"}) do |f| %>
+      <% if @teacher.errors.any? %>
+      <div class="alert alert-danger">
+        <a class="close" data-dismiss="alert">&#215;</a>
+        <ul>
+          <% @teacher.errors.full_messages.each do |msg| %>
+          <%= content_tag :li, msg, :id => "error_#{msg}" if msg.is_a?(String) %>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+       <fieldset>
+        <legend>Editando Professor</legend>
+
+        <%= render 'form', :f => f %>
+
+      </fieldset>
+      <% end %>
+    </div>
+  </div>
+

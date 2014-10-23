@@ -1,0 +1,38 @@
+<h3>Alunos</h3>
+
+<div class="row col-md-12">
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to("Novo Aluno", new_student_path, class: "btn btn-success btn-xs pull-right", title: "novo Aluno") %>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Cidade</th>
+
+        <th class="text-center">Administrar</th>
+      </tr>
+    </thead>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.name %></td>
+        <td><%= student.phone %></td>
+        <td><%= student.city %></td>
+
+        <td class="text-center">
+         <%= link_to(student_path(student), class:"btn btn-default btn-xs") do %>
+           <span class="glyphicon glyphicon-remove"></span> Show
+          <% end %>
+          <%= link_to(edit_student_path(student), class: 'btn btn-info btn-xs') do %>
+           <span class="glyphicon glyphicon-edit"></span> Editar
+          <% end %>
+          <%= link_to(student_path(student), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
+            <span class="glyphicon glyphicon-remove"></span> Deletar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+   
+  </table>
+</div>

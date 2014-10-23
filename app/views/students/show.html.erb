@@ -1,0 +1,22 @@
+<h3>Detalhes do Aluno</h3>
+<p></p>
+<p><strong>ID:</strong> <%= @student.id %></p>
+<p><strong>Nome:</strong> <%= @student.name %></p>
+<p><strong>CPF:</strong> <%= @student.cpf %></p>
+<p><strong>Nome:</strong> <%= @student.name %></p>
+<p><strong>RG:</strong> <%= @student.rg %></p>
+<p><strong>Data Nacimento:</strong> <%= @student.dtBirth %></p>
+<p><strong>Sexo:</strong> <%= @student.sex %></p>
+<p><strong>Estado Civil:</strong> <%= @student.stateCivil %></p>
+<p><strong>Telefone:</strong> <%= @student.phone %></p>
+<p><strong>Celular:</strong> <%= @student.cellphone %></p>
+<p><strong>Estado:</strong> <%= @student.state %></p>
+<p><strong>Cidade:</strong> <%= @student.city %></p>
+<p><strong>Endereço:</strong> <%= @student.address %></p>
+<p><strong>Numero:</strong> <%= @student.number %></p>
+<p><strong>Bairro:</strong> <%= @student.district %></p>
+<p><strong>CEP:</strong> <%= @student.cep %></p>
+<p><strong>Certificados:</strong> <%= @student.certifications.blank? ? "Sem Certificado" : "#{@student.certifications}" %></p>
+
+
+<%= link_to("Voltar", students_path, class: "btn btn-success pull-right", title: "Voltar") %>

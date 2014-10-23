@@ -1,0 +1,8 @@
+<h3>Detalhes do Departamento</h3>
+<p></p>
+<p><strong>ID:</strong> <%= @department.id %></p>
+<p><strong>Nome:</strong> <%= @department.name %></p>
+<p><strong>Nome:</strong> <%= @department.phone %></p>
+<p><strong>Nome:</strong> <%= @department.course.name %></p>
+
+<%= link_to("Voltar", departments_path, class: "btn btn-success pull-right", title: "Voltar") %>

@@ -1,0 +1,12 @@
+<h3>Detalhes da Disciplina</h3>
+<p></p>
+<p><strong>ID:</strong> <%= @discipline.id %></p>
+<p><strong>Nome:</strong> <%= @discipline.name %></p>
+<p><strong>Periodo:</strong> <%= @discipline.period %></p>
+<p><strong>Carga Horária:</strong> <%= @discipline.loadHourly %> Horas</p>
+<p><strong>Curso:</strong> <%= @discipline.course.name %></p>
+<p><strong>Professor:</strong> <%= @discipline.teacher.name %></p>
+<p><strong>Matriz:</strong> <%= @discipline.matrix %></p>
+<p><strong>Pré-Requisito:</strong> <%= @discipline.preRequisite.blank? ? "Sem Requisito" : "#{@discipline.preRequisite}" %></p>
+
+<%= link_to("Voltar", disciplines_path, class: "btn btn-success pull-right", title: "Voltar") %>

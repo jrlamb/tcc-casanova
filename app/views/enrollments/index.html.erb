@@ -1,0 +1,35 @@
+<h3>Matriculas</h3>
+
+<div class="row col-md-12">
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to("Nova Matricula", new_enrollment_path, class: "btn btn-success btn-xs pull-right", title: "nova Matricula") %>
+      <tr>
+        <th>ID</th>
+        <th>Estudante</th>
+
+        <th class="text-center">Administrar</th>
+      </tr>
+    </thead>
+    <% @enrollments.each do |enrollment| %>
+      <tr>
+        <td><%= enrollment.id %></td>
+        <td><%= enrollment.student.name %></td>
+        
+
+        <td class="text-center">
+         <%= link_to(enrollment_path(enrollment), class:"btn btn-default btn-xs") do %>
+           <span class="glyphicon glyphicon-remove"></span> Show
+          <% end %>
+          <%= link_to(edit_enrollment_path(enrollment), class: 'btn btn-info btn-xs') do %>
+           <span class="glyphicon glyphicon-edit"></span> Editar
+          <% end %>
+          <%= link_to(enrollment_path(enrollment), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
+            <span class="glyphicon glyphicon-remove"></span> Deletar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+   
+  </table>
+</div>

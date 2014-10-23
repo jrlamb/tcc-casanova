@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  enrollment_id: 
+  turma_id: 
+  discipline_references: MyString
+
+two:
+  enrollment_id: 
+  turma_id: 
+  discipline_references: MyString

@@ -1,0 +1,76 @@
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Nome</label>
+  <div class="col-sm-10">
+    <%= f.text_field :name, placeholder: "Informe o Nome", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Quantidade de Câmpus</label>
+  <div class="col-sm-10">
+    <%= f.text_field :qtdCampus, placeholder: "Informe a Quantidade de Campus", class: "form-control" %>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Endereço</label>
+  <div class="col-sm-10">
+    <%= f.text_field :address, placeholder: "Informe o Endereço", class: "form-control" %>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Número</label>
+  <div class="col-sm-4">
+    <%= f.text_field :number, placeholder: "Informe o Número", class: "form-control" %>
+  </div>
+
+  <label class="col-sm-2 control-label" for="textinput">Bairro</label>
+  <div class="col-sm-4">
+    <%= f.text_field :district, placeholder: "Informe o Bairro", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">CEP</label>
+  <div class="col-sm-4">
+    <%= f.text_field :cep, placeholder: "Informe o CEP", class: "form-control" %>
+  </div>
+
+  <label class="col-sm-2 control-label" for="textinput">Estado</label>
+  <div class="col-sm-4">
+    <%= f.text_field :state, placeholder: "Informe o Estado", class: "form-control" %>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Cidade</label>
+  <div class="col-sm-10">
+    <%= f.text_field :city, placeholder: "Informe a Cidade", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Telefone Fixo</label>
+  <div class="col-sm-4">
+    <%= f.text_field :phoneFixed, placeholder: "Informe o Telfone Fixo", class: "form-control" %>
+  </div>
+
+  <label class="col-sm-2 control-label" for="textinput">Telefone Fax</label>
+  <div class="col-sm-4">
+    <%= f.text_field :phoneFax, placeholder: "Informe o Fax", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <div class="pull-right">
+      <%= link_to("Cancelar", universities_path, title: "Cancelar", class: "btn btn-default") %>
+     <%= f.submit("Salvar", class: "btn btn-primary", title: "Salvar") %>
+    </div>
+  </div>
+</div>
+

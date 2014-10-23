@@ -1,0 +1,17 @@
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Nome</label>
+  <div class="col-sm-10">
+    <%= f.text_field :name, placeholder: "Informe o Nome", class: "form-control" %>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <div class="pull-right">
+      <%= link_to("Cancelar", courses_path, title: "Cancelar", class: "btn btn-default") %>
+     <%= f.submit("Salvar", class: "btn btn-primary") %>
+    </div>
+  </div>
+</div>
+

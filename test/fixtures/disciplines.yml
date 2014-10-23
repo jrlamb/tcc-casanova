@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  period: MyString
+  loadHourly: 1
+  cource_id: 
+  matrix: MyString
+  integer: MyString
+  preRequisite: MyString
+
+two:
+  name: MyString
+  period: MyString
+  loadHourly: 1
+  cource_id: 
+  matrix: MyString
+  integer: MyString
+  preRequisite: MyString

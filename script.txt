@@ -1,0 +1,21 @@
+rails generate scaffold University name:string qtdCampus:integer address:string number:string district:string cep:integer state:string city:string phoneFixed:string phoneFax:string
+
+rails generate scaffold Campu name:string address:string number:string district:string cep:integer state:string city:string phoneFixed:string phoneFax:string university:references
+
+rails generate scaffold Course name:string
+
+rails generate scaffold Department name:string phone:string course:references
+
+rails generate scaffold Discipline name:string period:string loadHourly:integer course:references matrix: integer preRequisite:string 
+
+rails generate scaffold Turma name:string period:string 
+
+rails generate migration disciplines_turmas
+
+rails generate scaffold Teacher name:string cpf:string rg:string dtBirth:date sex:string stateCivil:string phone:string cellphone:string state:string city:string address:string number:string district:string cep:integer certifications:string
+
+rails generate scaffold Student name:string cpf:string rg:string dtBirth:date sex:string stateCivil:string phone:string cellphone:string state:string city:string address:string number:string district:string cep:integer certifications:string
+
+rails generate scaffold Enrollment student:references 
+
+rails generate model item enrollment:references turma:references discipline:references

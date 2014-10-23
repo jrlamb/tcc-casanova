@@ -1,0 +1,40 @@
+<h3>Disciplinas</h3>
+
+<div class="row col-md-12">
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to("Nova Disciplina", new_discipline_path, class: "btn btn-success btn-xs pull-right", title: "nova Disciplina") %>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Periodo</th>
+        <th>Curso</th>
+        <th>Professor</th>
+
+        <th class="text-center">Administrar</th>
+      </tr>
+    </thead>
+    <% @disciplines.each do |discipline| %>
+      <tr>
+        <td><%= discipline.id %></td>
+        <td><%= discipline.name %></td>
+        <td><%= discipline.period %></td>
+        <td><%= discipline.course.name %></td>
+        <td><%= discipline.teacher.name %></td>
+
+        <td class="text-center">
+         <%= link_to(discipline_path(discipline), class:"btn btn-default btn-xs") do %>
+           <span class="glyphicon glyphicon-remove"></span> Show
+          <% end %>
+          <%= link_to(edit_discipline_path(discipline), class: 'btn btn-info btn-xs') do %>
+           <span class="glyphicon glyphicon-edit"></span> Editar
+          <% end %>
+          <%= link_to(discipline_path(discipline), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
+            <span class="glyphicon glyphicon-remove"></span> Deletar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+   
+  </table>
+</div>

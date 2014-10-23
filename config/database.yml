@@ -1,0 +1,23 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: UniversidadeTcc_development
+  username: postgres
+  password: saifer
+
+ 
+test:
+  <<: *default
+  database: UniversidadeTcc_test
+
+
+production:
+  <<: *default
+  database: UniversidadeTcc_production
+  username: UniversidadeTcc
+  password: <%= ENV['UNIVERSIDADETCC_DATABASE_PASSWORD'] %>

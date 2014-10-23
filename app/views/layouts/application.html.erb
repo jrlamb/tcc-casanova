@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistema Universidade 1.0</title>
+	<%= stylesheet_link_tag    'application', 'bootstrap.min', 'jumbotron-narrow', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'bootstrap.min', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<ul class="nav nav-pills pull-right"> 
+				<li class="active"><%= link_to("Home", root_path, title: "página Inicial") %></li>
+				<li><%= link_to("Universidades", universities_path, title: "listar Universidades") %></li>
+				<li><%= link_to("Cursos", courses_path, title: "listar Cursos") %></li>
+				<li><%= link_to("Departamentos", departments_path , title: "listar Departamentos") %></li>
+				<li><%= link_to("Disciplinas", disciplines_path, title: "listar Disciplinas") %></li>
+				<li><%= link_to("Turmas", turmas_path, title: "listar Turmas") %></li>
+				<li><%= link_to("Alunos", students_path, title: "listar Alunos") %></li>
+				<li><%= link_to("Professores", teachers_path, title: "listar Professores") %></li>
+				<li><%= link_to("Matrículas", enrollments_path, title: "listar Matriculas") %></li>
+			</ul>
+			<h3 class="text-muted">Sistema Universidade 1.0</h3>
+		</div>
+
+		<%= yield %>
+
+	</div> <!-- /container -->
+
+	
+</body>
+</html>

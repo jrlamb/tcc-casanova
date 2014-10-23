@@ -1,0 +1,15 @@
+<h3>Detalhes da Matricula</h3>
+<p></p>
+<p><strong>ID:</strong> <%= @enrollment.id %></p>
+<p><strong>Estudante:</strong> <%= @enrollment.student.name %></p>
+<p><strong>Disciplinas:</strong> </p>
+	<% @enrollment.items.each do |item| %>
+		<p>* <%= item.discipline.name %></p>
+	<% end %>
+
+<p><strong>Turmas:</strong> </p>
+	<% @enrollment.items.each do |item| %>
+		<p>* <%= item.turma.name %></p>
+	<% end %>
+
+<%= link_to("Voltar", enrollments_path, class: "btn btn-success pull-right", title: "Voltar") %>

@@ -1,0 +1,38 @@
+<h3>Departamentos</h3>
+
+<div class="row col-md-12">
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to("Novo Departamento", new_department_path, class: "btn btn-success btn-xs pull-right", title: "novo Departamento") %>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Curso</th>
+
+        <th class="text-center">Administrar</th>
+      </tr>
+    </thead>
+    <% @departments.each do |department| %>
+      <tr>
+        <td><%= department.id %></td>
+        <td><%= department.name %></td>
+        <td><%= department.phone %></td>
+        <td><%= department.course.name %></td>
+
+        <td class="text-center">
+         <%= link_to(department_path(department), class:"btn btn-default btn-xs") do %>
+           <span class="glyphicon glyphicon-remove"></span> Show
+          <% end %>
+          <%= link_to(edit_department_path(department), class: 'btn btn-info btn-xs') do %>
+           <span class="glyphicon glyphicon-edit"></span> Editar
+          <% end %>
+          <%= link_to(department_path(department), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
+            <span class="glyphicon glyphicon-remove"></span> Deletar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+   
+  </table>
+</div>

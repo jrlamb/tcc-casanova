@@ -1,0 +1,15 @@
+<h3>Detalhes da Universidade</h3>
+<p></p>
+<p><strong>ID:</strong> <%= @university.id %></p>
+<p><strong>Nome:</strong> <%= @university.name %></p>
+<p><strong>Quantidade Câmpus:</strong> <%= @university.qtdCampus %></p>
+<p><strong>Endereço:</strong> <%= @university.address %></p>
+<p><strong>Número:</strong> <%= @university.number %></p>
+<p><strong>Bairro:</strong> <%= @university.district %></p>
+<p><strong>CEP:</strong> <%= @university.cep %></p>
+<p><strong>Estado:</strong> <%= @university.state %></p>
+<p><strong>Cidade:</strong> <%= @university.city %></p>
+<p><strong>Telefone Fixo:</strong> <%= @university.phoneFixed %></p>
+<p><strong>Telefone Fax:</strong> <%= @university.phoneFax %></p>
+
+<%= link_to("Voltar", universities_path, class: "btn btn-success pull-right", title: "Voltar") %>

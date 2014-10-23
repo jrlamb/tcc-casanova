@@ -1,0 +1,29 @@
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Estudante</label>
+  <div class="col-sm-10">
+    <%= f.select :student_id, @students.collect {|p| [p.name, p.id]}, { prompt: "Selecione o Estudante"} , class: "form-control" %>
+  </div>
+</div>
+
+<hr class="clearfix">
+<div id="items">
+  <%= f.fields_for :items do |ff| %>
+  <%= render 'item_fields', :f => ff %> 
+  <% end %>
+</div>
+
+<!--<span id="add" title="Adicionar mais produtos">Mais</span> -->
+<div class="col-12 form-actions" style="padding: 0 15px;">
+  <%= link_to_add_association "Adicionar", f, :items, class: "btn btn-success"%>
+</div>
+
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <div class="pull-right">
+      <%= link_to("Cancelar", enrollments_path, title: "Cancelar", class: "btn btn-default") %>
+      <%= f.submit("Salvar", class: "btn btn-primary") %>
+    </div>
+  </div>
+</div>
+

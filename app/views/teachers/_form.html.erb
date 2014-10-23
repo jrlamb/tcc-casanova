@@ -1,0 +1,114 @@
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Nome</label>
+  <div class="col-sm-10">
+    <%= f.text_field :name, placeholder: "Informe o Nome", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">CPF</label>
+  <div class="col-sm-10">
+    <%= f.text_field :cpf, placeholder: "Informe o CPF", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">RG</label>
+  <div class="col-sm-10">
+    <%= f.text_field :rg, placeholder: "Informe o RG", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Data Nascimento</label>
+  <div class="col-sm-10">
+    <%= f.text_field :dtBirth, placeholder: "Informe a Data Nascimento", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Sexo</label>
+  <div class="col-sm-10">
+    <%= f.text_field :sex, placeholder: "Informe o Sexo", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Estado Civil</label>
+  <div class="col-sm-10">
+    <%= f.text_field :stateCivil, placeholder: "Informe o Estado Civil", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Telefone</label>
+  <div class="col-sm-10">
+    <%= f.text_field :phone, placeholder: "Informe o Telefone", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Celular</label>
+  <div class="col-sm-10">
+    <%= f.text_field :cellphone, placeholder: "Informe o Celular", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Estado</label>
+  <div class="col-sm-10">
+    <%= f.text_field :state, placeholder: "Informe o Estado", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Cidade</label>
+  <div class="col-sm-10">
+    <%= f.text_field :city, placeholder: "Informe a Cidade", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Endereço</label>
+  <div class="col-sm-10">
+    <%= f.text_field :address, placeholder: "Informe o Endereço", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Numero</label>
+  <div class="col-sm-10">
+    <%= f.text_field :number, placeholder: "Informe o Numero", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Bairro</label>
+  <div class="col-sm-10">
+    <%= f.text_field :district, placeholder: "Informe o Bairro", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">CEP</label>
+  <div class="col-sm-10">
+    <%= f.text_field :cep, placeholder: "Informe o CEP", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="textinput">Certificação</label>
+  <div class="col-sm-10">
+    <%= f.text_field :certifications, placeholder: "Informe Certificação", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <div class="pull-right">
+      <%= link_to("Cancelar", students_path, title: "Cancelar", class: "btn btn-default") %>
+     <%= f.submit("Salvar", class: "btn btn-primary") %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+<h3>Detalhes do Professor</h3>
+<p></p>
+<p><strong>ID:</strong> <%= @teacher.id %></p>
+<p><strong>Nome:</strong> <%= @teacher.name %></p>
+<p><strong>CPF:</strong> <%= @teacher.cpf %></p>
+<p><strong>Nome:</strong> <%= @teacher.name %></p>
+<p><strong>RG:</strong> <%= @teacher.rg %></p>
+<p><strong>Data Nacimento:</strong> <%= @teacher.dtBirth %></p>
+<p><strong>Sexo:</strong> <%= @teacher.sex %></p>
+<p><strong>Estado Civil:</strong> <%= @teacher.stateCivil %></p>
+<p><strong>Telefone:</strong> <%= @teacher.phone %></p>
+<p><strong>Celular:</strong> <%= @teacher.cellphone %></p>
+<p><strong>Estado:</strong> <%= @teacher.state %></p>
+<p><strong>Cidade:</strong> <%= @teacher.city %></p>
+<p><strong>Endereço:</strong> <%= @teacher.address %></p>
+<p><strong>Numero:</strong> <%= @teacher.number %></p>
+<p><strong>Bairro:</strong> <%= @teacher.district %></p>
+<p><strong>CEP:</strong> <%= @teacher.cep %></p>
+<p><strong>Certificados:</strong> <%= @teacher.certifications.blank? ? "Sem Certificado" : "#{@teacher.certifications}" %></p>
+
+
+<%= link_to("Voltar", teachers_path, class: "btn btn-success pull-right", title: "Voltar") %>

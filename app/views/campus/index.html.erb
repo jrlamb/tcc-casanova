@@ -1,0 +1,38 @@
+<h3>Câmpus</h3>
+
+<div class="row col-md-12">
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to("Novo Câmpus", new_university_campu_path, class: "btn btn-success btn-xs pull-right", title: "novo Câmpu") %>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Cidade</th>
+        <th>Telefone Fixo</th>
+
+        <th class="text-center">Administrar</th>
+      </tr>
+    </thead>
+    <% @campus.each do |campu| %>
+      <tr>
+        <td><%= campu.id %></td>
+        <td><%= campu.name %></td>
+        <td><%= campu.city %></td>
+        <td><%= campu.phoneFixed %></td>
+
+        <td class="text-center">
+         <%= link_to(university_campu_path(campu.university_id,campu), class:"btn btn-default btn-xs") do %>
+           <span class="glyphicon glyphicon-remove"></span> Show
+          <% end %>
+          <%= link_to(edit_university_campu_path(campu.university_id,campu), class: 'btn btn-info btn-xs') do %>
+           <span class="glyphicon glyphicon-edit"></span> Editar
+          <% end %>
+          <%= link_to(university_campu_path(campu.university_id, campu), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
+            <span class="glyphicon glyphicon-remove"></span> Deletar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+   
+  </table>
+</div>

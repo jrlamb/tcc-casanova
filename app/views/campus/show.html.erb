@@ -1,0 +1,15 @@
+<h3>Detalhes do Câmpu</h3>
+<p></p>
+<p><strong>ID:</strong> <%= @campu.id %></p>
+<p><strong>Nome:</strong> <%= @campu.name %></p>
+<p><strong>Endereço:</strong> <%= @campu.address %></p>
+<p><strong>Número:</strong> <%= @campu.number %></p>
+<p><strong>Bairro:</strong> <%= @campu.district %></p>
+<p><strong>CEP:</strong> <%= @campu.cep %></p>
+<p><strong>Estado:</strong> <%= @campu.state %></p>
+<p><strong>Cidade:</strong> <%= @campu.city %></p>
+<p><strong>Telefone Fixo:</strong> <%= @campu.phoneFixed %></p>
+<p><strong>Telefone Fax:</strong> <%= @campu.phoneFax %></p>
+<p><strong>Universidade:</strong> <%= @campu.university.name %></p>
+
+<%= link_to("Voltar", university_campus_path, class: "btn btn-success pull-right", title: "Voltar") %>
