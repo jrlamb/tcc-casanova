@@ -1,10 +1,12 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
+before_action :set_department, only: [:new, :edit, :create, :update]
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @department = Department.find(params[:department_id])
+    @courses = @department.courses.all
   end
 
   # GET /courses/1
@@ -24,11 +26,12 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(course_params)
+    department = Department.find(params[:department_id])
+    @course = department.courses.new(course_params)
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to university_campu_department_courses_path, notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
@@ -41,8 +44,10 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1.json
   def update
     respond_to do |format|
+      department = Department.find(params[:department_id])
+      @course = department.courses.find(params[:id])
       if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.html { redirect_to university_campu_department_courses_path, notice: 'Course was successfully updated.' }
         format.json { render :show, status: :ok, location: @course }
       else
         format.html { render :edit }
@@ -56,7 +61,7 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     respond_to do |format|
-      format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
+      format.html { redirect_to university_campu_department_courses_path, notice: 'Course was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,4 +76,8 @@ class CoursesController < ApplicationController
     def course_params
       params.require(:course).permit(:name)
     end
+
+    def set_department
+      @departments = Department.all.order("name ASC")
+    end 
 end

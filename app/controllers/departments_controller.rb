@@ -1,11 +1,12 @@
 class DepartmentsController < ApplicationController
   before_action :set_department, only: [:show, :edit, :update, :destroy]
-  before_action :set_courses, only: [:new, :create, :edit, :update]
+  before_action :set_campus, only: [:new, :create, :edit, :update]
 
   # GET /departments
   # GET /departments.json
   def index
-    @departments = Department.all
+    @campu = Campu.find(params[:campu_id])
+    @departments = @campu.departments.all
   end
 
   # GET /departments/1
@@ -25,11 +26,12 @@ class DepartmentsController < ApplicationController
   # POST /departments
   # POST /departments.json
   def create
-    @department = Department.new(department_params)
+    campu = Campu.find(params[:campu_id])
+    @department = campu.departments.new(department_params)
 
     respond_to do |format|
       if @department.save
-        format.html { redirect_to @department, notice: 'Department was successfully created.' }
+        format.html { redirect_to university_campu_departments_path, notice: 'Department was successfully created.' }
         format.json { render :show, status: :created, location: @department }
       else
         format.html { render :new }
@@ -42,8 +44,10 @@ class DepartmentsController < ApplicationController
   # PATCH/PUT /departments/1.json
   def update
     respond_to do |format|
+      campu = Campu.find(params[:campu_id])
+      @department = campu.departments.find(params[:id])
       if @department.update(department_params)
-        format.html { redirect_to @department, notice: 'Department was successfully updated.' }
+        format.html { redirect_to university_campu_departments_path, notice: 'Department was successfully updated.' }
         format.json { render :show, status: :ok, location: @department }
       else
         format.html { render :edit }
@@ -57,7 +61,7 @@ class DepartmentsController < ApplicationController
   def destroy
     @department.destroy
     respond_to do |format|
-      format.html { redirect_to departments_url, notice: 'Department was successfully destroyed.' }
+      format.html { redirect_to university_campu_departments_path, notice: 'Department was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,10 +74,10 @@ class DepartmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def department_params
-      params.require(:department).permit(:name, :phone, :course_id)
+      params.require(:department).permit(:name, :phone, :campu_id)
     end
 
-    def set_courses
-      @courses = Course.all.order("name ASC")
+    def set_campus
+      @campus = Campu.all.order("name ASC")
     end  
 end

@@ -3,7 +3,7 @@ class CreateDepartments < ActiveRecord::Migration
     create_table :departments do |t|
       t.string :name
       t.string :phone
-      t.references :course, index: true
+      t.references :campu, index: true
 
       t.timestamps
     end

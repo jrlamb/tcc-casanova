@@ -1,14 +1,19 @@
+<ol class="breadcrumb">
+  <li><%= link_to "Home", root_path, title: "Página Inicial" %></li>
+  <li><%= link_to(@university.name, universities_path, title: "Listar Universidades") %></li>
+</ol>
 <h3>Câmpus</h3>
 
 <div class="row col-md-12">
   <table class="table table-striped custab">
     <thead>
-      <%= link_to("Novo Câmpus", new_university_campu_path, class: "btn btn-success btn-xs pull-right", title: "novo Câmpu") %>
+          <%= link_to("Novo Câmpus", new_university_campu_path, class: "btn btn-success btn-xs pull-right", title: "novo Câmpu") %>
       <tr>
         <th>ID</th>
         <th>Nome</th>
         <th>Cidade</th>
         <th>Telefone Fixo</th>
+        <th>Departamentos</th>
 
         <th class="text-center">Administrar</th>
       </tr>
@@ -19,6 +24,9 @@
         <td><%= campu.name %></td>
         <td><%= campu.city %></td>
         <td><%= campu.phoneFixed %></td>
+        <td><%= link_to("Adicionar ", new_university_campu_department_path(campu.university.id, campu.id), class:"btn btn-success btn-xs", title: "Adiconar Departamento") %> / <%= link_to("Listar ", university_campu_departments_path(campu.university.id, campu.id), class:"btn btn-info btn-xs", title: "Listar Departamentos") %>
+        </td>
+        
 
         <td class="text-center">
          <%= link_to(university_campu_path(campu.university_id,campu), class:"btn btn-default btn-xs") do %>

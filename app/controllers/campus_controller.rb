@@ -1,13 +1,13 @@
 class CampusController < ApplicationController
   before_action :set_campu, only: [:destroy]
 
-  before_action :set_university, only: [:new, :edit, :create]
+  before_action :set_university, only: [:new, :edit, :create, :update]
 
   # GET /campus
   # GET /campus.json
   def index
-    university = University.find(params[:university_id])
-    @campus = university.campus.all
+    @university = University.find(params[:university_id])
+    @campus = @university.campus.all
   end
 
   # GET /campus/1

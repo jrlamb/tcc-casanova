@@ -12,10 +12,10 @@
     Course.create(name: "Arquitetura e Urbanismo")
     Course.create(name: "Enfermagem")
 
-    Department.create(name: "Analise de Sistemas", phone: "(45) 4566-5452", course_id: 2)
-    Department.create(name: "Arquitetura", phone: "(45) 3240-8452", course_id: 3)
-    Department.create(name: "Estagio", phone: "(45) 3795-5264", course_id: 1)
-    Department.create(name: "Formatura", phone: "(45) 3258-9721", course_id: 3)
+    Department.create(name: "Analise de Sistemas", phone: "(45) 4566-5452", campu_id: 2)
+    Department.create(name: "Arquitetura", phone: "(45) 3240-8452", campu_id: 3)
+    Department.create(name: "Estagio", phone: "(45) 3795-5264", campu_id: 1)
+    Department.create(name: "Formatura", phone: "(45) 3258-9721", campu_id: 3)
 
     Teacher.create(name: "Prof. Marco da Silva", cpf: "045.545.454-75", rg: "248.245.254 6", dtBirth: "14/10/1988", sex: "Masculino", stateCivil: "Casado", phone: "(45) 3245-5324", cellphone: "(45) 9125-8934", state: "Paraná", city: "Medianeira", address: "Rua Bahia", number: "2345", district: "Ipê", cep: 85887000, certifications: "Formado pela Faculdade UTF-RJ" )
     Teacher.create(name: "Prof. Juliano", cpf: "452.454.545-75", rg: "457.421.124 9", dtBirth: "01/10/1975", sex: "Masculino", stateCivil: "Solteiro", phone: "(45) 3245-5648", cellphone: "(45) 8845-8934", state: "Paraná", city: "Matelândia", address: "Rua Manuel Ribas", number: "21", district: "Centro", cep: 85895600 )

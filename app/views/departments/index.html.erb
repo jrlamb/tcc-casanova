@@ -1,14 +1,20 @@
+<ol class="breadcrumb">
+  <li><%= link_to "Home", root_path, title: "Página Inicial" %></li>
+  <li><%= link_to(@campu.university.name, universities_path, title: "Listar Universidade") %></li>
+  <li><%= link_to(@campu.name, university_campus_path(@campu.university), title: "Listar Campus") %></li>
+</ol>
 <h3>Departamentos</h3>
 
 <div class="row col-md-12">
   <table class="table table-striped custab">
     <thead>
-      <%= link_to("Novo Departamento", new_department_path, class: "btn btn-success btn-xs pull-right", title: "novo Departamento") %>
+          <%= link_to("Novo Departamento",  new_university_campu_department_path, class: "btn btn-success btn-xs pull-right", title: "novo Departamento") %>
+      
       <tr>
         <th>ID</th>
         <th>Nome</th>
         <th>Telefone</th>
-        <th>Curso</th>
+        <th>Cursos</th>
 
         <th class="text-center">Administrar</th>
       </tr>
@@ -18,16 +24,18 @@
         <td><%= department.id %></td>
         <td><%= department.name %></td>
         <td><%= department.phone %></td>
-        <td><%= department.course.name %></td>
+       <td><%= link_to("Adicionar ", new_university_campu_department_course_path(department.campu.university.id, department.campu.id, department.id), class:"btn btn-success btn-xs", title: "Adiconar Curso") %> / <%= link_to("Listar ", university_campu_department_courses_path(department.campu.university.id, department.campu.id, department.id), class:"btn btn-info btn-xs", title: "Listar Curso") %>
+        </td>
+
 
         <td class="text-center">
-         <%= link_to(department_path(department), class:"btn btn-default btn-xs") do %>
+         <%= link_to(university_campu_department_path(department.campu.university.id, department.campu.id, department.id), class:"btn btn-default btn-xs") do %>
            <span class="glyphicon glyphicon-remove"></span> Show
           <% end %>
-          <%= link_to(edit_department_path(department), class: 'btn btn-info btn-xs') do %>
+          <%= link_to(edit_university_campu_department_path(department.campu.university.id, department.campu.id, department.id), class: 'btn btn-info btn-xs') do %>
            <span class="glyphicon glyphicon-edit"></span> Editar
           <% end %>
-          <%= link_to(department_path(department), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
+          <%= link_to(university_campu_department_path(department.campu.university.id, department.campu.id, department.id), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
             <span class="glyphicon glyphicon-remove"></span> Deletar
           <% end %>
         </td>

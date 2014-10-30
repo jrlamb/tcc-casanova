@@ -1,0 +1,18 @@
+require 'rest_client'
+require 'json'
+
+ puts "Adicionando um novo Curso"
+ 
+ response = RestClient.post "http://localhost:3000/courses.json", { 'name' => "teste" }.to_json, :content_type => :json, :accept => :json
+ puts response 
+
+ puts "Listando todos os Cursos"
+
+ response = RestClient.get("http://localhost:3000/courses.json")
+ courses = JSON.parse(response)
+ courses.each do |course|
+   puts "#{course['id']} - #{course['name']} "
+ end
+
+
+

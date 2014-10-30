@@ -6,18 +6,24 @@ Rails.application.routes.draw do
 
   resources :turmas
 
-  resources :disciplines
+  
 
   resources :students
 
   resources :teachers
 
-  resources :departments
+ 
 
-  resources :courses
+  
 
   resources :universities do
-    resources :campus
+    resources :campus do
+      resources :departments do 
+        resources :courses do
+          resources :disciplines
+        end
+      end    
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

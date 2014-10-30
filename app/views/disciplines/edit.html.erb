@@ -1,6 +1,6 @@
   <div class="row">
   	<div class="col-md-12">
-      <%= form_for(@discipline, html: {class: "form-horizontal", role: "form"}) do |f| %>
+      <%= form_for(@discipline, :url => university_campu_department_course_discipline_path(params[:university_id], params[:campu_id], params[:department_id], params[:course_id], @discipline.id), html: {class: "form-horizontal", role: "form"}) do |f| %>
       <% if @discipline.errors.any? %>
       <div class="alert alert-danger">
         <a class="close" data-dismiss="alert">&#215;</a>

@@ -2,7 +2,7 @@
 <p></p>
 <p><strong>ID:</strong> <%= @department.id %></p>
 <p><strong>Nome:</strong> <%= @department.name %></p>
-<p><strong>Nome:</strong> <%= @department.phone %></p>
-<p><strong>Nome:</strong> <%= @department.course.name %></p>
+<p><strong>Telefone:</strong> <%= @department.phone %></p>
+<p><strong>Campus:</strong> <%= @department.campu.name %></p>
 
-<%= link_to("Voltar", departments_path, class: "btn btn-success pull-right", title: "Voltar") %>
+<%= link_to("Voltar",  university_campu_departments_path, class: "btn btn-success pull-right", title: "Voltar") %>

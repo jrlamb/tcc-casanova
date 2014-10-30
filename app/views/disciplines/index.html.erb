@@ -1,14 +1,21 @@
+<ol class="breadcrumb">
+  <li><%= link_to "Home", root_path, title: "Página Inicial" %></li>
+  <li><%= link_to(@course.department.campu.university.name, universities_path, title: "Listar Universidade") %></li>
+  <li><%= link_to(@course.department.campu.name, university_campus_path(@course.department.campu.university), title: "Listar Campus") %></li>
+  <li><%= link_to(@course.department.name, university_campu_departments_path(@course.department.campu.university, @course.department.campu), title: "Listar Departamentos") %></li>
+  <li><%= link_to(@course.name, university_campu_department_courses_path(@course.department.campu.university, @course.department.campu, @course.department), title: "Listar Cursos") %></li>
+</ol>
+
 <h3>Disciplinas</h3>
 
 <div class="row col-md-12">
   <table class="table table-striped custab">
     <thead>
-      <%= link_to("Nova Disciplina", new_discipline_path, class: "btn btn-success btn-xs pull-right", title: "nova Disciplina") %>
+      <%= link_to("Nova Disciplina", new_university_campu_department_course_discipline_path, class: "btn btn-success btn-xs pull-right", title: "nova Disciplina") %>
       <tr>
         <th>ID</th>
         <th>Nome</th>
         <th>Periodo</th>
-        <th>Curso</th>
         <th>Professor</th>
 
         <th class="text-center">Administrar</th>
@@ -19,17 +26,17 @@
         <td><%= discipline.id %></td>
         <td><%= discipline.name %></td>
         <td><%= discipline.period %></td>
-        <td><%= discipline.course.name %></td>
         <td><%= discipline.teacher.name %></td>
 
+
         <td class="text-center">
-         <%= link_to(discipline_path(discipline), class:"btn btn-default btn-xs") do %>
+         <%= link_to(university_campu_department_course_discipline_path(discipline.course.department.campu.university.id, discipline.course.department.campu.id, discipline.course.department.id, discipline.course.id, discipline.id), class:"btn btn-default btn-xs") do %>
            <span class="glyphicon glyphicon-remove"></span> Show
           <% end %>
-          <%= link_to(edit_discipline_path(discipline), class: 'btn btn-info btn-xs') do %>
+          <%= link_to(edit_university_campu_department_course_discipline_path(discipline.course.department.campu.university.id, discipline.course.department.campu.id, discipline.course.department.id, discipline.course.id, discipline.id), class: 'btn btn-info btn-xs') do %>
            <span class="glyphicon glyphicon-edit"></span> Editar
           <% end %>
-          <%= link_to(discipline_path(discipline), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
+          <%= link_to(university_campu_department_course_discipline_path(discipline.course.department.campu.university.id, discipline.course.department.campu.id, discipline.course.department.id, discipline.course.id, discipline.id), method: :delete, data: { confirm: "Deseja Realmente Excluir?" }, class: "btn btn-danger btn-xs") do %>
             <span class="glyphicon glyphicon-remove"></span> Deletar
           <% end %>
         </td>

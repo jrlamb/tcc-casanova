@@ -35,19 +35,22 @@ ActiveRecord::Schema.define(version: 20141015182425) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
+    t.integer  "department_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "courses", ["department_id"], name: "index_courses_on_department_id", using: :btree
 
   create_table "departments", force: true do |t|
     t.string   "name"
     t.string   "phone"
-    t.integer  "course_id"
+    t.integer  "campu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "departments", ["course_id"], name: "index_departments_on_course_id", using: :btree
+  add_index "departments", ["campu_id"], name: "index_departments_on_campu_id", using: :btree
 
   create_table "disciplines", force: true do |t|
     t.string   "name"

@@ -4,7 +4,7 @@ rails generate scaffold Campu name:string address:string number:string district:
 
 rails generate scaffold Course name:string
 
-rails generate scaffold Department name:string phone:string course:references
+rails generate scaffold Department name:string phone:string campu:references
 
 rails generate scaffold Discipline name:string period:string loadHourly:integer course:references matrix: integer preRequisite:string 
 
@@ -18,4 +18,4 @@ rails generate scaffold Student name:string cpf:string rg:string dtBirth:date se
 
 rails generate scaffold Enrollment student:references 
 
-rails generate model item enrollment:references turma:references discipline:references
+rails generate model Item enrollment:references turma:references discipline:references
