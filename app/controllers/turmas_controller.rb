@@ -62,8 +62,7 @@ class TurmasController < ApplicationController
   end
 
   def list_students
-    @itens = Item.joins(:enrollment).where(turma_id: @turma.id).group("items.id, items.enrollment_id")
-    #@itens = Item.joins(:enrollment).where(turma_id: @turma.id).uniq.group("items.id, items.enrollment_id")
+    @itens = Item.select(:enrollment_id, :turma_id).uniq
 
     respond_to do |format|
       format.html #{ redirect_to turmas_path }

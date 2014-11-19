@@ -16,7 +16,8 @@ require 'json'
  response = RestClient.get("https://universidadetcc.herokuapp.com/universities.json")
  universities = JSON.parse(response)
  universities.each do |university|
-   puts "#{university['id']} - #{university['name']} - #{university['address']} - #{university['district']} - #{university['state']} - #{university['city']} - #{university['phoneFixed']}"
+   puts "#{university['id']} - #{university['name']} - #{university['address']} - #{university['district']} - 
+   		#{university['state']} - #{university['city']} - #{university['phoneFixed']}"
  end
 
 
