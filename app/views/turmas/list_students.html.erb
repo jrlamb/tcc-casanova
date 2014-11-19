@@ -1,0 +1,8 @@
+<h3>Lista de Alunos Matriculados na Turma <%= @turma.name %></h3>
+<ul>
+	<% @itens.each do |item| %>
+		<li><%= item.enrollment.student.name %></li>
+	<% end %>
+</ul>
+
+<%= link_to("Voltar", turmas_path, class: "btn btn-success pull-right", title: "Voltar") %>

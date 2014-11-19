@@ -1,5 +1,5 @@
 class TurmasController < ApplicationController
-  before_action :set_turma, only: [:show, :edit, :update, :destroy]
+  before_action :set_turma, only: [:show, :edit, :update, :destroy, :list_students]
   before_action :set_associacao, only: [:new, :create, :edit, :update]
   # GET /turmas
   # GET /turmas.json
@@ -60,6 +60,16 @@ class TurmasController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def list_students
+    @itens = Item.joins(:enrollment).where(turma_id: @turma.id).group("items.id, items.enrollment_id")
+    #@itens = Item.joins(:enrollment).where(turma_id: @turma.id).uniq.group("items.id, items.enrollment_id")
+
+    respond_to do |format|
+      format.html #{ redirect_to turmas_path }
+    end
+
+  end  
 
   private
     # Use callbacks to share common setup or constraints between actions.

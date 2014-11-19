@@ -4,17 +4,11 @@ Rails.application.routes.draw do
 
   resources :matriculas
 
-  resources :turmas
-
-  
+  resources :turmas 
 
   resources :students
 
   resources :teachers
-
- 
-
-  
 
   resources :universities do
     resources :campus do
@@ -25,6 +19,8 @@ Rails.application.routes.draw do
       end    
     end
   end
+
+ get 'turmas/:id/lista_alunos' => 'turmas#list_students'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
